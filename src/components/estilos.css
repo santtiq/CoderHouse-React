@@ -15,8 +15,24 @@ html , body , #root {
     padding: 0 50px;
 }
 
-.nav-link{
+.links-container{
+    display: flex;
+}
+
+.nav-link, .cartWidget{
     margin-left: 30px;
     text-decoration: none;
     color: black;
+}
+
+.cartWidget{
+    cursor:pointer; 
+    cursor: hand;
+}
+
+.item-container h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
 }
