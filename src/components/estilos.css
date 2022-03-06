@@ -8,6 +8,8 @@ html , body , #root {
     height: 100vh;
 }
 
+/* ---- NavBar start ---- */
+
 .nav-container{
     display: flex;
     justify-content: space-between;
@@ -19,16 +21,28 @@ html , body , #root {
     display: flex;
 }
 
+/* ---- NavBar end ---- */
+
+/* ---- NavBar & Cart Widget start ---- */
+
 .nav-link, .cartWidget{
     margin-left: 30px;
     text-decoration: none;
     color: black;
 }
 
+/* ---- NavBar & Cart Widget end ---- */
+
+/* ---- Cart Widget start ---- */
+
 .cartWidget{
     cursor:pointer; 
     cursor: hand;
 }
+
+/* ---- Cart Widget end ---- */
+
+/* ---- Item List Container Start ---- */
 
 .item-container h1{
     display: flex;
@@ -36,3 +50,37 @@ html , body , #root {
     justify-content: center;
     margin-top: 2rem;
 }
+
+/* ---- Item List Container end ---- */
+
+/* ---- Item Count start ---- */
+
+.card-container{
+    display: flex;
+    justify-content: center
+}
+
+.card-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-top: 1rem;
+    width: 200px;
+    height: 100px;
+}
+
+.card-stock, .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-stock i{
+    margin: 0 .5rem;
+    cursor: pointer; 
+    cursor: hand;
+}
+
+/* ---- Item Count end ---- */
