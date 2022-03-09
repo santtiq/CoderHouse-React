@@ -21,19 +21,16 @@ function ItemCount(props) {
     const onAdd = () => { }
 
     return (
-        <section className="card-container">
-            <div className="card-body">
-                <h1>Mate Imperial</h1>
-                <div className="card-stock">
-                    <i className="fa-solid fa-plus" onClick={plus}></i>
-                    <p>{contador}</p>
-                    <i className="fa-solid fa-minus" onClick={minus}></i>
-                </div>
-                <div className="button">
-                    <button onClick={onAdd} disabled={contador === 0}>Agregar al carrito</button>
-                </div>
+        <>
+            <div className="card-stock">
+                <i className="fa-solid fa-plus" onClick={plus}></i>
+                <p>{contador}</p>
+                <i className="fa-solid fa-minus" onClick={minus}></i>
             </div>
-        </section>
+            <div className="button">
+                <button onClick={onAdd} disabled={contador === 0}>Agregar al carrito</button>
+            </div>
+        </>
     )
 }
 

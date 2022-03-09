@@ -6,6 +6,7 @@
 
 html , body , #root {
     height: 100vh;
+    font-family: "proxima-nova", sans-serif;
 }
 
 /* ---- NavBar start ---- */
@@ -44,32 +45,24 @@ html , body , #root {
 
 /* ---- Item List Container Start ---- */
 
+.item-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .item-container h1{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
+    font-size: 1.1em;
 }
 
 /* ---- Item List Container end ---- */
 
 /* ---- Item Count start ---- */
-
-.card-container{
-    display: flex;
-    justify-content: center
-}
-
-.card-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border: 1px solid black;
-    margin-top: 1rem;
-    width: 200px;
-    height: 100px;
-}
 
 .card-stock, .button{
     display: flex;
@@ -84,3 +77,67 @@ html , body , #root {
 }
 
 /* ---- Item Count end ---- */
+
+/* ---- Spinner start ---- */
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+/* ---- Spinner end ---- */
+
+/* ---- Item start ---- */
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    margin: 0 0.3rem;
+}
+
+.card-body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-top: 1rem;
+    height: 350px;
+    width: 250px
+}
+
+.card-text{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-text h1{
+    margin-bottom: 0.5rem;
+}
+
+.img{
+    height: 50%;
+    width: 100%;
+}
+
+/* ---- Item end ---- */
