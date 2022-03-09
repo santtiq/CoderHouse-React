@@ -3,10 +3,10 @@ import ItemList from "./ItemList";
 import Spinner from "./Spinner";
 
 let productos = [
-    { id: 1, stock: 10, name: "Mate Imperial Marrón", img: "../../public/img/imperial1.jpg", cat: "Mate", price: 4499 },
-    { id: 2, stock: 7, name: "Mate Imperial Clásico", img: "../../public/img/imperial2.jpg", cat: "Mate", price: 5999 },
-    { id: 3, stock: 3, name: "Mate Imperial Artesanal", img: "../../public/img/imperial3.jpg", cat: "Mate", price: 5599 },
-    { id: 4, stock: 5, name: "Mate Imperial Blanco", img: "../../public/img/imperial4.jpg", cat: "Mate", price: 5599 }
+    { id: 1, stock: 10, name: "Mate Imperial Marrón", img: "/img/imperial1.jpg", cat: "Mate", price: 4499 },
+    { id: 2, stock: 7, name: "Mate Imperial Clásico", img: "/img/imperial2.jpg", cat: "Mate", price: 5999 },
+    { id: 3, stock: 3, name: "Mate Imperial Artesanal", img: "/img/imperial3.jpg", cat: "Mate", price: 5599 },
+    { id: 4, stock: 5, name: "Mate Imperial Blanco", img: "/img/imperial4.jpg", cat: "Mate", price: 5599 }
 ]
 
 const ItemListContainer = () => {
