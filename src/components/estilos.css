@@ -148,3 +148,32 @@ html , body , #root {
 }
 
 /* ---- Item end ---- */
+
+/* ---- Item Detail Container start---- */
+
+.detail-container{
+    margin-top: 1rem;
+}
+
+.detail-card-container{
+    display: flex;
+}
+
+.tittle{
+    margin-bottom: 1rem;
+}
+
+.img-container img{
+    height: 300px;
+    width: 300px;
+}
+
+.detail-caract{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 1rem;
+}
+
+/* ---- Item Detail Container end ---- */
