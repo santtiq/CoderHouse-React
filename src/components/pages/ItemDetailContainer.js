@@ -1,26 +1,28 @@
 import { useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail";
-import Spinner from "./Spinner";
-
-let producto = { id: 1, stock: 10, name: "Mate Imperial Marrón", img: "/img/imperial1.jpg", cat: "Mate", price: 4499 }
+import { useParams } from "react-router-dom";
+import ItemDetail from "../ItemDetail";
+import Spinner from "../widgets/Spinner";
 
 const ItemDetailContainer = () => {
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [products, setProducts] = useState([]);
+    const { id } = useParams();
 
 
     useEffect(() => {
-        const PromiseTest = new Promise((res, rej) => {
-            setTimeout(() => { res(producto) }, 2000)
-        })
 
-        PromiseTest
-            .then((res) => {
-                setProducts(products);
+        const pedido = fetch(`/api/game?id=${id}`)
+
+        pedido
+            .then((resultado) => {
+                return resultado.json()
             })
-            .catch((rej) => {
+            .then((juego) => {
+                setProducts(juego)
+            })
+            .catch(() => {
                 setError(true);
             })
             .finally(() => {
@@ -33,7 +35,7 @@ const ItemDetailContainer = () => {
     return (
         <>
             <main className="item-container">
-                {loading ? <Spinner /> : <ItemDetail products={producto} />}
+                {loading ? <Spinner /> : <ItemDetail products={products} />}
                 {error ? <h2>Ocurrió un error intentando cargar la página</h2> : null}
             </main>
 

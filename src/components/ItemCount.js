@@ -5,7 +5,6 @@ function ItemCount(props) {
 
     const [contador, setContador] = useState(1);
 
-
     const plus = () => {
         if (contador < props.stock) {
             setContador(contador + 1)

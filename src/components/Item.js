@@ -1,19 +1,21 @@
-import Contador from "./ItemCount"
+import { Link } from "react-router-dom"
 
-const Item = (props) => {
 
+const Item = ({ producto }) => {
     return (
         <section className="card-container">
-            <div className="card-body">
+            {<div className="card-body">
                 <div className="img">
-                    <img src={props.img} />
+                    <img src={producto.thumbnail} alt="" />
                 </div>
                 <div className="card-text">
-                    <h1>{props.name}</h1>
-                    <p>Price: $ {props.price}</p>
-                    <Contador stock={props.stock} />
+                    <p className="tittle-card">{producto.title}</p>
+                    <p>Fecha de lanzamiento: {producto.release_date}</p>
+                    <button>
+                        <Link to={`/item/${producto.id}`}>Detalle</Link>
+                    </button>
                 </div>
-            </div>
+            </div>}
 
         </section>
 

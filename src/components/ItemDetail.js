@@ -1,18 +1,19 @@
-
-function ItemDetail(props) {
+import Contador from "./ItemCount"
+function ItemDetail({ products }) {
 
     return (
         <>
             <section className="detail-container">
-                <h1 className="tittle" >Detail Container</h1>
+                <h1 className="detail-title"> {products.title}</h1>
                 <div className="detail-card-container">
                     <div className="img-container">
-                        <img src={props.products.img} />
+                        <img src={products.thumbnail} alt="" />
                     </div>
                     <div className="detail-caract">
-                        <p><strong>Nombre:</strong> {props.products.name}</p>
-                        <p><strong>Precio:</strong> $ {props.products.price}</p>
-                        <p><strong>Categoria:</strong> {props.products.cat}</p>
+                        <p><strong>Nombre:</strong> {products.title}</p>
+                        <p><strong>Fecha de lanzamiento:</strong> {products.release_date}</p>
+                        <p><strong>Categoria:</strong> {products.genre}</p>
+                        <Contador stock={10} />
                     </div>
                 </div>
             </section>

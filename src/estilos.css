@@ -18,15 +18,56 @@ html , body , #root {
     padding: 0 50px;
 }
 
+.nav-container a, .nav-container a:visited{
+    text-decoration: none;
+    color: #1F271B;
+}
+
+.nav-link{
+    text-decoration: none;
+    display: flex;
+    margin: 0 .6rem;
+}
+
 .links-container{
     display: flex;
 }
+/* ---- */
+.links-container ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.links-container ul li{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.links-container ul ul{
+    display: none;
+    padding: 0 .5rem;
+    position: absolute;
+    margin: 0 auto;
+    background-color: #FFFFFC;
+}
+
+.links-container ul ul li{
+    float: none;
+    text-align: center;
+}
+
+.links-container ul li:hover > ul{
+    display: block;
+}
+/* ---- */
 
 /* ---- NavBar end ---- */
 
 /* ---- NavBar & Cart Widget start ---- */
 
-.nav-link, .cartWidget{
+.cartWidget{
     margin-left: 30px;
     text-decoration: none;
     color: black;
@@ -52,7 +93,7 @@ html , body , #root {
     flex-wrap: wrap;
 }
 
-.item-container h1{
+.item-container h2{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,8 +159,8 @@ html , body , #root {
     justify-content: space-between;
     flex-direction: column;
     margin-top: 1rem;
-    height: 400px;
-    width: 200px;
+    height: 350px;
+    width: 365px;
     box-shadow: 1px 2px 4px #88888859;
 }
 
@@ -129,17 +170,33 @@ html , body , #root {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     border-top: 1px solid black;
 }
 
-.card-text h1{
-    margin-bottom: 0.5rem;
+.card-text .tittle-card{
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-text button{
+    background: #386FA4;
+    border: none;
+    padding: 0.3rem 0.5rem;
+    font-size: .9rem;
+    margin-top: .3rem;
+    border-radius: 3px;
+}
+
+.card-text button a{
+    text-decoration: none;
+    color: #FFFFFC;
 }
 
 .img{
-    height: 200px;
-    width: 200px;
+    height: 206px;
+    width: 365px;
 }
 
 .img img{
@@ -149,7 +206,7 @@ html , body , #root {
 
 /* ---- Item end ---- */
 
-/* ---- Item Detail Container start---- */
+/* ---- Item Detail start---- */
 
 .detail-container{
     margin-top: 1rem;
@@ -159,13 +216,15 @@ html , body , #root {
     display: flex;
 }
 
-.tittle{
+.detail-title{
+    font-size: 2rem;
+    text-align: center;
     margin-bottom: 1rem;
 }
 
 .img-container img{
-    height: 300px;
-    width: 300px;
+    height: 206px;
+    width: 365px;
 }
 
 .detail-caract{
@@ -176,4 +235,4 @@ html , body , #root {
     margin-left: 1rem;
 }
 
-/* ---- Item Detail Container end ---- */
+/* ---- Item Detail end ---- */
