@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import { Link } from "react-router-dom"
 
 function ItemCount(props) {
 
@@ -17,7 +17,12 @@ function ItemCount(props) {
         }
     }
 
-    const onAdd = () => { }
+    const [agregado, setAgregado] = useState(true)
+
+    const confirm = (e) => {
+        props.onAdd(contador);
+        setAgregado(false);
+    }
 
     return (
         <>
@@ -27,7 +32,7 @@ function ItemCount(props) {
                 <i className="fa-solid fa-minus" onClick={minus}></i>
             </div>
             <div className="button">
-                <button onClick={onAdd} disabled={contador === 0}>Agregar al carrito</button>
+                {agregado ? <button disabled={contador === 0} onClick={confirm}>Confirmar selección</button> : <button className="link-button"><Link to="/cart">Terminar mi compra</Link></button>}
             </div>
         </>
     )

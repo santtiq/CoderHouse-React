@@ -6,27 +6,19 @@ function Header() {
         <header className="nav-container">
             <NavLink to="/"><h1>Brand</h1></NavLink>
             <nav className="links-container">
-                <NavLink to="catalogo" className="nav-link">Catálogo</NavLink>
                 <ul>
                     <li>
-                        <NavLink to="/" className="nav-link">Categoría</NavLink>
+                        <NavLink to="/" className="nav-link">Ropa</NavLink>
                         <ul>
-                            <li><NavLink to="categoria/MMORPG">MMORPG</NavLink></li>
-                            <li><NavLink to="categoria/MOBA">MOBA</NavLink></li>
-                            <li><NavLink to="categoria/ARPG">ARPG</NavLink></li>
+                            <li><NavLink to="categoria/men's clothing">Hombre</NavLink></li>
+                            <li><NavLink to="categoria/women's clothing">Mujer</NavLink></li>
                         </ul>
                     </li>
                 </ul>
-                <ul>
-                    <li>
-                        <NavLink to="/" className="nav-link">Plataforma</NavLink>
-                        <ul>
-                            <li><NavLink to="plataforma/PC (Windows)">PC</NavLink></li>
-                            <li><NavLink to="plataforma/Web Browser">WEB</NavLink></li>
-                        </ul>
-                    </li>
-                </ul>
-                <NavLink to="carrito"><Widget /></NavLink>
+                <NavLink to="accesorios/jewelery" className="nav-link">Joyeria</NavLink>
+                <NavLink to="accesorios/electronics" className="nav-link">Electrónica</NavLink>
+
+                <NavLink to="cart"><Widget /></NavLink>
 
             </nav>
         </header>

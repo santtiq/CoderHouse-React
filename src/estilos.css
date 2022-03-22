@@ -117,6 +117,11 @@ html , body , #root {
     cursor: hand;
 }
 
+.link-button a{
+    text-decoration: none;
+    color: #1F271B;
+}
+
 /* ---- Item Count end ---- */
 
 /* ---- Spinner start ---- */
@@ -159,8 +164,8 @@ html , body , #root {
     justify-content: space-between;
     flex-direction: column;
     margin-top: 1rem;
-    height: 350px;
-    width: 365px;
+    height: 400px;
+    width: 350px;
     box-shadow: 1px 2px 4px #88888859;
 }
 
@@ -195,8 +200,8 @@ html , body , #root {
 }
 
 .img{
-    height: 206px;
-    width: 365px;
+    height: 200px;
+    width: 150px;
 }
 
 .img img{
@@ -223,8 +228,8 @@ html , body , #root {
 }
 
 .img-container img{
-    height: 206px;
-    width: 365px;
+    height: 350px;
+    width: 300px;
 }
 
 .detail-caract{

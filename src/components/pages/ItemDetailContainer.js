@@ -13,14 +13,14 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
 
-        const pedido = fetch(`/api/game?id=${id}`)
+        const pedido = fetch(`https://fakestoreapi.com/products/${id}`)
 
         pedido
             .then((resultado) => {
                 return resultado.json()
             })
-            .then((juego) => {
-                setProducts(juego)
+            .then((producto) => {
+                setProducts(producto)
             })
             .catch(() => {
                 setError(true);

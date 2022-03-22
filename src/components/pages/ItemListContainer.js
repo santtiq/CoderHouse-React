@@ -10,21 +10,15 @@ const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
     const { id } = useParams();
 
-    const pedido = fetch("/api/games?platform=all&sort-by=release-date")
+    const pedido = fetch("https://fakestoreapi.com/products")
     useEffect(() => {
 
         if (id) {
             pedido
                 .then((RtaApi) => {
                     return RtaApi.json()
-                }).then((juegos) => {
-                    juegos.filter(p => {
-                        if (p.genre == id) {
-                            setProductos(juegos.filter(p => p.genre == id))
-                        } else if (p.platform == id) {
-                            setProductos(juegos.filter(p => p.platform == id))
-                        }
-                    })
+                }).then((api) => {
+                    setProductos(api.filter(p => p.category == id))
                 }).catch(() => {
                     setError(true);
                 })
@@ -35,8 +29,8 @@ const ItemListContainer = () => {
             pedido
                 .then((RtaApi) => {
                     return RtaApi.json()
-                }).then((juegos) => {
-                    setProductos(juegos)
+                }).then((api) => {
+                    setProductos(api)
                 })
                 .catch(() => {
                     setError(true);

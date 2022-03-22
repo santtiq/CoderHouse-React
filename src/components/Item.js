@@ -6,11 +6,11 @@ const Item = ({ producto }) => {
         <section className="card-container">
             {<div className="card-body">
                 <div className="img">
-                    <img src={producto.thumbnail} alt="" />
+                    <img src={producto.image} alt="" />
                 </div>
                 <div className="card-text">
                     <p className="tittle-card">{producto.title}</p>
-                    <p>Fecha de lanzamiento: {producto.release_date}</p>
+                    <p>Precio: $ {producto.price}</p>
                     <button>
                         <Link to={`/item/${producto.id}`}>Detalle</Link>
                     </button>

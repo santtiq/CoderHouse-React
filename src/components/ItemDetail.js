@@ -1,5 +1,9 @@
-import Contador from "./ItemCount"
+import ItemCount from "./ItemCount"
 function ItemDetail({ products }) {
+
+    const onAdd = (e) => {
+        console.log(e)
+    }
 
     return (
         <>
@@ -7,13 +11,13 @@ function ItemDetail({ products }) {
                 <h1 className="detail-title"> {products.title}</h1>
                 <div className="detail-card-container">
                     <div className="img-container">
-                        <img src={products.thumbnail} alt="" />
+                        <img src={products.image} alt="" />
                     </div>
                     <div className="detail-caract">
                         <p><strong>Nombre:</strong> {products.title}</p>
-                        <p><strong>Fecha de lanzamiento:</strong> {products.release_date}</p>
-                        <p><strong>Categoria:</strong> {products.genre}</p>
-                        <Contador stock={10} />
+                        <p><strong>Precio:</strong> {products.price}</p>
+                        <p><strong>Categoria:</strong> {products.category}</p>
+                        <ItemCount stock={10} onAdd={onAdd} />
                     </div>
                 </div>
             </section>
