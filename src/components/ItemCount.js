@@ -19,7 +19,7 @@ function ItemCount(props) {
 
     const [agregado, setAgregado] = useState(true)
 
-    const confirm = (e) => {
+    const confirm = () => {
         props.onAdd(contador);
         setAgregado(false);
     }

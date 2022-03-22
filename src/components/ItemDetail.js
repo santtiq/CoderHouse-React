@@ -2,7 +2,7 @@ import ItemCount from "./ItemCount"
 function ItemDetail({ products }) {
 
     const onAdd = (e) => {
-        console.log(e)
+        const cantidadDeProductos = e
     }
 
     return (
