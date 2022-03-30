@@ -6,29 +6,34 @@ const { Provider } = contexto
 const MiProvider = (props) => {
 
     const [carrito, setCarrito] = useState([])
-    const [total, setTotal] = useState(0)
+    const [totalPrecio, setTotalPrecio] = useState(0)
+    const [totalProductos, setTotalProductos] = useState(0)
 
     const borrarDelCarrito = (producto) => {
         setCarrito(carrito.filter(item => item.id !== producto.id))
-        setTotal(total - producto.price * producto.cantidad)
+        setTotalPrecio(totalPrecio - producto.price * producto.cantidad)
+        setTotalProductos(totalProductos - producto.cantidad)
     }
 
     const agregarAlCarrito = (producto, cantidad) => {
         if (isInCart(producto)) {
             const item = carrito.find(item => item.id === producto.id)
             item.cantidad += cantidad
-            setTotal(total + (producto.price * cantidad))
+            setTotalPrecio(totalPrecio + (producto.price * cantidad))
+            setTotalProductos(totalProductos + cantidad)
             console.log("estoy en el carrito")
         } else {
             setCarrito([...carrito, { ...producto, cantidad }])
-            setTotal(total + (producto.price * cantidad))
+            setTotalPrecio(totalPrecio + (producto.price * cantidad))
+            setTotalProductos(totalProductos + cantidad)
             console.log("no estoy en el carrito")
         }
     }
 
     const limpiarCarrito = () => {
         setCarrito([])
-        setTotal(0)
+        setTotalPrecio(0)
+        setTotalProductos(0)
     }
 
     const isInCart = (producto) => {
@@ -40,7 +45,8 @@ const MiProvider = (props) => {
     }
 
     const contextValue = {
-        total,
+        totalPrecio,
+        totalProductos,
         carrito,
         borrarDelCarrito,
         agregarAlCarrito,

@@ -61,6 +61,22 @@ html , body , #root {
 .links-container ul li:hover > ul{
     display: block;
 }
+
+.cart-btn{
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-items{
+    position: absolute;
+    top: -13px;
+    right: -11px;
+    background: #386FA4;
+    color: #FFFFFC;
+    padding: 0 3px;
+    border-radius: 30%;
+}
+
 /* ---- */
 
 /* ---- NavBar end ---- */
