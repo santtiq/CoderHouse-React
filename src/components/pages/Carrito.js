@@ -4,12 +4,7 @@ import { contexto } from "../CartContext";
 
 const Carrito = () => {
 
-    const resultado = useContext(contexto);
-    const carrito = resultado.carrito
-
-    const handleBorrar = () => {
-        console.log("borrar")
-    }
+    const { carrito, total, limpiarCarrito, borrarDelCarrito } = useContext(contexto);
 
     return (
         <>
@@ -17,12 +12,15 @@ const Carrito = () => {
             {carrito.map(item => (
                 <div key={item.id}>
                     <h3>{item.title}</h3>
-                    <p>{item.price}</p>
-                    <p>{item.descripcion}</p>
+                    <p>Precio: $ {item.price}</p>
+                    <p>Descripcion: {item.description}</p>
+                    <p>Cantidad: {item.cantidad}</p>
                     <p>Total: $ {item.price * item.cantidad}</p>
-                    <button onClick={handleBorrar}>borrar</button>
+                    <button onClick={() => borrarDelCarrito(item)}>borrar</button>
                 </div>
             ))}
+            <div>TOTAL CARRITO: $ {total.toFixed(2)}</div>
+            <button onClick={() => limpiarCarrito()}>BORRAR TODO EL CARRITO</button>
         </>
     )
 }

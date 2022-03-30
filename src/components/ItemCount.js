@@ -1,7 +1,10 @@
 import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
+import { contexto } from "./CartContext";
 
 function ItemCount(props) {
+
+    const { agregarAlCarrito } = useContext(contexto);
 
     const [contador, setContador] = useState(1);
 
@@ -24,6 +27,7 @@ function ItemCount(props) {
         setAgregado(false);
     }
 
+
     return (
         <>
             <div className="card-stock">
@@ -32,7 +36,8 @@ function ItemCount(props) {
                 <i className="fa-solid fa-minus" onClick={minus}></i>
             </div>
             <div className="button">
-                {agregado ? <button disabled={contador === 0} onClick={confirm}>Confirmar selección</button> : <button className="link-button"><Link to="/cart">Terminar mi compra</Link></button>}
+                {agregado ? <button disabled={contador === 0} onClick={confirm}>Confirmar selección</button>
+                    : <button className="link-button" onClick={() => agregarAlCarrito(props.products, contador)}><Link to="/cart">Terminar mi compra</Link></button>}
             </div>
         </>
     )

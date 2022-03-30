@@ -18,7 +18,7 @@ function ItemDetail({ products }) {
                         <p><strong>Nombre:</strong> {products.title}</p>
                         <p><strong>Precio:</strong> {products.price}</p>
                         <p><strong>Categoria:</strong> {products.category}</p>
-                        <ItemCount stock={10} onAdd={onAdd} />
+                        <ItemCount stock={10} onAdd={onAdd} products={products} />
                     </div>
                 </div>
             </section>

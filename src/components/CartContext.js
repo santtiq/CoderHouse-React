@@ -8,16 +8,21 @@ const MiProvider = (props) => {
     const [carrito, setCarrito] = useState([])
     const [total, setTotal] = useState(0)
 
-    const borrarDelCarrito = (id) => { }
+    const borrarDelCarrito = (producto) => {
+        setCarrito(carrito.filter(item => item.id !== producto.id))
+        setTotal(total - producto.price * producto.cantidad)
+    }
 
     const agregarAlCarrito = (producto, cantidad) => {
-        if (isInCart()) {
+        if (isInCart(producto)) {
             const item = carrito.find(item => item.id === producto.id)
             item.cantidad += cantidad
             setTotal(total + (producto.price * cantidad))
+            console.log("estoy en el carrito")
         } else {
             setCarrito([...carrito, { ...producto, cantidad }])
             setTotal(total + (producto.price * cantidad))
+            console.log("no estoy en el carrito")
         }
     }
 
@@ -26,8 +31,8 @@ const MiProvider = (props) => {
         setTotal(0)
     }
 
-    const isInCart = (id) => {
-        if (carrito.find(item => item.id === id)) {
+    const isInCart = (producto) => {
+        if (carrito.find(item => item.id === producto.id)) {
             return true
         } else {
             return false
@@ -35,11 +40,11 @@ const MiProvider = (props) => {
     }
 
     const contextValue = {
-        total: total,
-        carrito: carrito,
-        borrarDelCarrito: borrarDelCarrito,
-        agregarAlCarrito: agregarAlCarrito,
-        limpiarCarrito: limpiarCarrito
+        total,
+        carrito,
+        borrarDelCarrito,
+        agregarAlCarrito,
+        limpiarCarrito
     }
 
     return (
