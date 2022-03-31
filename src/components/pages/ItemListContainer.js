@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList";
 import Spinner from "../widgets/Spinner";
+import { db } from "../firebase";
+import { getDocs, query, collection, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
 
@@ -10,28 +12,22 @@ const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
     const { id } = useParams();
 
-    const pedido = fetch("https://fakestoreapi.com/products")
     useEffect(() => {
 
         if (id) {
-            pedido
-                .then((RtaApi) => {
-                    return RtaApi.json()
-                }).then((api) => {
-                    setProductos(api.filter(p => p.category == id))
-                }).catch(() => {
+            const q = query(collection(db, "productos"), where("category", "==", id))
+
+            getDocs(q)
+                .then((resp) => setProductos(resp.docs.map(p => ({ productos: p.data(), id: p.id }))))
+                .catch(() => {
                     setError(true);
                 })
                 .finally(() => {
                     setLoading(false);
                 })
         } else {
-            pedido
-                .then((RtaApi) => {
-                    return RtaApi.json()
-                }).then((api) => {
-                    setProductos(api)
-                })
+            getDocs(collection(db, "productos"))
+                .then((resp) => setProductos(resp.docs.map(p => ({ productos: p.data(), id: p.id }))))
                 .catch(() => {
                     setError(true);
                 })

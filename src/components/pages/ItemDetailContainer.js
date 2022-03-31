@@ -2,25 +2,24 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail";
 import Spinner from "../widgets/Spinner";
+import { db } from "../firebase";
+import { getDoc, doc } from "firebase/firestore";
+
 
 const ItemDetailContainer = () => {
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState({});
     const { id } = useParams();
 
 
     useEffect(() => {
 
-        const pedido = fetch(`https://fakestoreapi.com/products/${id}`)
-
-        pedido
+        const docRef = doc(db, "productos", id);
+        getDoc(docRef)
             .then((resultado) => {
-                return resultado.json()
-            })
-            .then((producto) => {
-                setProducts(producto)
+                setProducts(resultado.data())
             })
             .catch(() => {
                 setError(true);
@@ -29,7 +28,7 @@ const ItemDetailContainer = () => {
                 setLoading(false);
             })
 
-    }, [])
+    }, [id])
 
 
     return (

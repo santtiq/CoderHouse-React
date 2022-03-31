@@ -21,12 +21,10 @@ const MiProvider = (props) => {
             item.cantidad += cantidad
             setTotalPrecio(totalPrecio + (producto.price * cantidad))
             setTotalProductos(totalProductos + cantidad)
-            console.log("estoy en el carrito")
         } else {
             setCarrito([...carrito, { ...producto, cantidad }])
             setTotalPrecio(totalPrecio + (producto.price * cantidad))
             setTotalProductos(totalProductos + cantidad)
-            console.log("no estoy en el carrito")
         }
     }
 
