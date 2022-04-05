@@ -10,7 +10,7 @@ const CartWidget = () => {
             <div className="nav-icon">
                 <i className="fa-solid fa-cart-shopping"></i>
             </div>
-            <div className="cart-items">{totalProductos}</div>
+            {totalProductos > 0 ? <div className="cart-items">{totalProductos}</div> : null}
         </div>
     )
 }
