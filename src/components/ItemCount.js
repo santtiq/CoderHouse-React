@@ -31,6 +31,7 @@ function ItemCount(props) {
     return (
         <>
             <div className="card-stock">
+                <p><strong>Cantidad:</strong></p>
                 <i className="fa-solid fa-plus" onClick={plus}></i>
                 <p>{contador}</p>
                 <i className="fa-solid fa-minus" onClick={minus}></i>

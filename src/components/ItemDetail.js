@@ -9,17 +9,20 @@ function ItemDetail({ products }) {
     return (
         <>
             <section className="detail-container">
-                <h1 className="detail-title"> {products.title}</h1>
                 <div className="detail-card-container">
                     <div className="img-container">
                         <img src={products.image} alt="" />
                     </div>
                     <div className="detail-caract">
-                        <p><strong>Nombre:</strong> {products.title}</p>
-                        <p><strong>Precio:</strong> {products.price}</p>
-                        <p><strong>Categoria:</strong> {products.category}</p>
+                        <p className="detail-category">{products.category}</p>
+                        <h1>{products.title}</h1>
+                        <p>US$ {products.price}</p>
                         <ItemCount stock={10} onAdd={onAdd} products={products} />
                     </div>
+                </div>
+                <div className="detail-description">
+                    <p className="detail-description-title"><strong>Descripción</strong></p>
+                    <p>{products.description}</p>
                 </div>
             </section>
         </>
