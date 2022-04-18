@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import { contexto } from "./CartContext";
 
 function ItemCount(props) {
-
     const { agregarAlCarrito } = useContext(contexto);
 
     const [contador, setContador] = useState(1);

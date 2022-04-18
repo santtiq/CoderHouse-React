@@ -16,12 +16,13 @@ html , body , #root {
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
-    border-bottom: 1px solid rgb(216, 214, 214);
+    background-color: #ECDBBA;
+    border-bottom: 1px solid #fff;
 }
 
 .nav-container a, .nav-container a:visited{
     text-decoration: none;
-    color: #1F271B;
+    color: #2D4263;
 }
 
 .nav-link{
@@ -48,19 +49,28 @@ html , body , #root {
 
 .links-container ul ul{
     display: none;
-    padding: 0 .5rem;
     position: absolute;
-    margin: 0 auto;
     background-color: #FFFFFC;
+    border: 1px solid #000;
+    left: -10px;
 }
 
 .links-container ul ul li{
     float: none;
     text-align: center;
+    border-top: 1px solid rgb(233, 229, 229);
+    padding: 0 .5rem;
 }
 
 .links-container ul li:hover > ul{
-    display: block;
+    display: flex;
+    flex-direction: column;
+}
+
+.links-container ul ul li:hover{
+    background-color: #ECDBBA;
+    width: 100%;
+    border-top: 1px solid #ECDBBA;
 }
 
 .cart-btn{
@@ -78,25 +88,23 @@ html , body , #root {
     border-radius: 30%;
 }
 
+.brandLogo{
+    width: 50px;
+    height: 55px;
+    margin-top: 0.3rem;
+}
 /* ---- */
 
 /* ---- NavBar end ---- */
-
-/* ---- NavBar & Cart Widget start ---- */
-
-.cartWidget{
-    margin-left: 30px;
-    text-decoration: none;
-    color: black;
-}
-
-/* ---- NavBar & Cart Widget end ---- */
 
 /* ---- Cart Widget start ---- */
 
 .cartWidget{
     cursor:pointer; 
     cursor: hand;
+    margin-left: 30px;
+    text-decoration: none;
+    color: black;
 }
 
 /* ---- Cart Widget end ---- */
@@ -108,7 +116,7 @@ html , body , #root {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background: #faf7f1;
+    background: #FFFFFC;
 }
 
 .item-container a{
@@ -142,7 +150,7 @@ html , body , #root {
 
 .link-button a{
     text-decoration: none;
-    color: #1F271B;
+    color: #191919;
 }
 
 /* ---- Item Count end ---- */
@@ -156,10 +164,17 @@ html , body , #root {
     text-align: center;
     border: 10px solid #f3f3f3;
     border-top: 10px solid #3498db;
+    background-color: #FFFFFC;
     border-radius: 50%;
     width: 80px;
     height: 80px;
     animation: spin 1s linear infinite;
+}
+
+.loader-container{
+    height: 90vh;
+    display: flex;
+    align-items: center;
 }
 
 @keyframes spin {
@@ -178,7 +193,8 @@ html , body , #root {
 .card-container{
     display: flex;
     justify-content: center;
-    margin: 0 0.3rem;
+    margin: 0.5rem 0.3rem;
+    border: 1px solid rgb(233, 229, 229);
 }
 
 .card-body{
@@ -193,7 +209,7 @@ html , body , #root {
     border-radius: 5px;
 }
 
-.card-body:hover{
+.card-container:hover{
     box-shadow: 2px 2px 4px #88888859, -2px -2px 4px #88888859;
     transition: .1s;
 }
@@ -290,3 +306,100 @@ html , body , #root {
 }
 
 /* ---- Item Detail end ---- */
+
+/* ---- Cart start---- */
+
+.cart-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.cart-products-container, .cart-total{
+    width: 50%;
+}
+
+.empty-cart{
+    margin-top: 1rem;
+}
+
+.b-back-store{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .5rem;
+}
+
+.b-back-store button{
+    border: none;
+    background-color: #2D4263;
+    padding: .5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer; 
+    cursor: hand;
+    color: #FFFFFC;
+}
+
+.b-back-store a{
+    text-decoration: none;
+}
+
+.cart-item-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #2d42632b;
+    padding: .5rem;
+    margin-left: .9rem;
+    width: 40em;
+    height: 100%;
+}
+
+.cart-item-img img{
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+}
+
+.cart-item-descr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.cart-item-descr h3{
+    width: 95%;
+    text-align: center;
+}
+
+.cart-item-descr p{
+    font-size: .9em;
+}
+
+.cart-item-descr button{
+    border: none;
+    background-color: #2D4263;
+    padding: .3rem;
+    border-radius: 3px;
+    cursor: pointer;
+    cursor: hand;
+    color: #FFFFFC;
+}
+
+.cart-total{
+    display: flex;
+    flex-direction: column;
+    /* width: 300px; */
+    align-items: center;
+}
+/* ---- Cart end---- */

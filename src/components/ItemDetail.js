@@ -1,7 +1,6 @@
 import ItemCount from "./ItemCount"
 
 function ItemDetail({ products }) {
-
     const onAdd = (e) => {
         const cantidadDeProductos = e
     }
@@ -17,7 +16,7 @@ function ItemDetail({ products }) {
                         <p className="detail-category">{products.category}</p>
                         <h1>{products.title}</h1>
                         <p>US$ {products.price}</p>
-                        <ItemCount stock={10} onAdd={onAdd} products={products} />
+                        <ItemCount stock={products.stock} onAdd={onAdd} products={products} />
                     </div>
                 </div>
                 <div className="detail-description">

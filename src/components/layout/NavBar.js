@@ -1,15 +1,16 @@
 import Widget from "../widgets/CartWidget";
+import brandLogo from "../img/logo_transparent-small.png";
 import { NavLink } from "react-router-dom"
 
 function Header() {
     return (
         <header className="nav-container">
-            <NavLink to="/"><h1>Brand</h1></NavLink>
+            <NavLink to="/"><img src={brandLogo} className="brandLogo" /></NavLink>
             <nav className="links-container">
                 <ul>
                     <li>
                         <NavLink to="/" className="nav-link">Ropa</NavLink>
-                        <ul>
+                        <ul className="list-option">
                             <li><NavLink to="categoria/men's clothing">Hombre</NavLink></li>
                             <li><NavLink to="categoria/women's clothing">Mujer</NavLink></li>
                         </ul>
