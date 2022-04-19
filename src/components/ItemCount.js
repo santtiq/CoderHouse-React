@@ -29,14 +29,14 @@ function ItemCount(props) {
 
     return (
         <>
-            <div className="card-stock">
-                <p><strong>Cantidad:</strong></p>
-                <i className="fa-solid fa-plus" onClick={plus}></i>
-                <p>{contador}</p>
-                <i className="fa-solid fa-minus" onClick={minus}></i>
-            </div>
-            <div className="button">
-                {agregado ? <button disabled={contador === 0} onClick={confirm}>Confirmar selección</button>
+            <div className="card-stock-container">
+                <div className="card-stock-counter">
+                    <p><strong>Cantidad:</strong></p>
+                    <i className="fa-solid fa-plus" onClick={plus}></i>
+                    <p>{contador}</p>
+                    <i className="fa-solid fa-minus" onClick={minus}></i>
+                </div>
+                {agregado ? <button disabled={contador == 0} onClick={confirm}>Confirmar selección</button>
                     : <button className="link-button" onClick={() => agregarAlCarrito(props.products, contador)}><Link to="/cart">Terminar mi compra</Link></button>}
             </div>
         </>

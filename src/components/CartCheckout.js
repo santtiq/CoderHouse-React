@@ -9,11 +9,9 @@ const CartCheckout = () => {
     const { carrito, totalPrecio, limpiarCarrito, totalProductos } = useCartContext;
     const [buyerName, setBuyerName] = useState("");
     const [buyerEmail, setBuyerEmail] = useState("");
-    const [buyerEmailConf, setBuyerEmailConf] = useState("");
     const [buyerPhone, setBuyerPhone] = useState("");
     const [validName, setValidName] = useState(false);
     const [validEmail, setValidEmail] = useState(false);
-    const [validEmailConf, setValidEmailConf] = useState(false);
     const [validPhone, setValidPhone] = useState(false);
 
     const handleNameChange = (e) => {
@@ -54,27 +52,29 @@ const CartCheckout = () => {
 
     return (
         <>
-            <h2>Checkout Information:</h2>
-            <form >
-                <div>
-                    <input onChange={handleNameChange} value={buyerName} placeholder=" Ingrese su nombre" error={buyerName !== "" && !validName} />
-                </div>
-                <div>
-                    <input onChange={handlePhoneChange} value={buyerPhone} placeholder=" Ingrese su teléfono" error={buyerPhone !== "" && !validPhone} />
-                </div>
-                <div>
-                    <input onChange={handleEmailChange} value={buyerEmail} placeholder=" Ingrese su email" error={buyerEmail !== "" && !validEmail} />
-                </div>
+            <div className="cart-checkout-container">
+                <h2>Checkout Information</h2>
+                <form className="cart-checkout-form">
+                    <div className="cart-checkout-input">
+                        <input onChange={handleNameChange} value={buyerName} placeholder=" Ingrese su nombre" error={buyerName !== "" && !validName} />
+                    </div>
+                    <div className="cart-checkout-input">
+                        <input onChange={handlePhoneChange} value={buyerPhone} placeholder=" Ingrese su teléfono" error={buyerPhone !== "" && !validPhone} />
+                    </div>
+                    <div className="cart-checkout-input">
+                        <input onChange={handleEmailChange} value={buyerEmail} placeholder=" Ingrese su email" error={buyerEmail !== "" && !validEmail} />
+                    </div>
 
-            </form>
-            <div className="cart-total">
-                <div>
-                    <h3>TOTAL CARRITO: $ {totalPrecio.toFixed(2)}</h3>
-                    <h3>TOTAL PRODUCTOS: {totalProductos}</h3>
-                </div>
-                <div className="cart-buttons">
-                    <button onClick={handleCheckout} disabled={(!validName || !validEmail || !validPhone)}>Terminar Compra</button>
-                    <button onClick={() => limpiarCarrito()}>BORRAR TODO EL CARRITO</button>
+                </form>
+                <div className="cart-checkout-total">
+                    <div className="cart-checkout-info">
+                        <h3>TOTAL PRODUCTOS: {totalProductos}</h3>
+                        <h3>TOTAL CARRITO: $ {totalPrecio.toFixed(2)}</h3>
+                    </div>
+                    <div className="cart-checkout-buttons">
+                        <button onClick={handleCheckout} disabled={(!validName || !validEmail || !validPhone)}>TERMINAR COMPRA</button>
+                        <button onClick={() => limpiarCarrito()}>BORRAR TODO EL CARRITO</button>
+                    </div>
                 </div>
             </div>
         </>

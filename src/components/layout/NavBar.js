@@ -9,7 +9,7 @@ function Header() {
             <nav className="links-container">
                 <ul>
                     <li>
-                        <NavLink to="/" className="nav-link">Ropa</NavLink>
+                        <p>Ropa</p>
                         <ul className="list-option">
                             <li><NavLink to="categoria/men's clothing">Hombre</NavLink></li>
                             <li><NavLink to="categoria/women's clothing">Mujer</NavLink></li>
@@ -20,7 +20,6 @@ function Header() {
                 <NavLink to="accesorios/electronics" className="nav-link">Electrónica</NavLink>
 
                 <NavLink to="cart"><Widget /></NavLink>
-
             </nav>
         </header>
     )
