@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import ItemDetail from "../ItemDetail";
 import Spinner from "../widgets/Spinner";
 import { db } from "../firebase";
@@ -35,7 +36,7 @@ const ItemDetailContainer = () => {
         <>
             <main className="item-container">
                 {loading ? <Spinner /> : <ItemDetail products={products} />}
-                {error ? <h2>Ocurrió un error intentando cargar la página</h2> : null}
+                {error ? toast.error('Hubo un error') : null}
             </main>
 
         </>

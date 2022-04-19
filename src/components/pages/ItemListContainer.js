@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import ItemList from "../ItemList";
 import Spinner from "../widgets/Spinner";
 import { db } from "../firebase";
 import { getDocs, query, collection, where } from "firebase/firestore";
-
 const ItemListContainer = () => {
 
     const [loading, setLoading] = useState(true);
@@ -41,7 +41,7 @@ const ItemListContainer = () => {
         <>
             <main className="item-container">
                 {loading ? <Spinner /> : <ItemList products={productos} />}
-                {error ? <h2>Ocurrió un error intentando cargar la página</h2> : null}
+                {error ? toast.error('Hubo un error') : null}
             </main>
 
         </>

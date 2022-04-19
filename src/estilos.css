@@ -435,6 +435,7 @@ html , body , #root {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    float: left;
 }
 .cart-item-descr{
     width: 60%;

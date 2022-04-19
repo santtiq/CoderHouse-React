@@ -1,6 +1,8 @@
 import NavBar from "./components/layout/NavBar"
 import ItemListContainer from "./components/pages/ItemListContainer"
 import ItemDetailContainer from "./components/pages/ItemDetailContainer"
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import Cart from "./components/pages/Cart"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import MiProvider from "./components/CartContext"
@@ -17,6 +19,7 @@ function App() {
                     <Route path="/item/:id" element={<ItemDetailContainer />} />
                     <Route path="/cart" element={<Cart />} />
                 </Routes>
+                <ToastContainer />
             </ BrowserRouter>
         </MiProvider>
     )
