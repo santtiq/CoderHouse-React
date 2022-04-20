@@ -19,7 +19,7 @@ This is my final project for the ReactJS course dicted by CoderHouse. This proje
 
 ## Deploy
 
-This project is deployed with Vercel: https://shirty.vercel.app/
+This project it's deployed with Vercel: https://shirty.vercel.app/
 
 ## Usage
 
