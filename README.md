@@ -1,6 +1,7 @@
 <img src="http://therealsujitk-vercel-badge.vercel.app/?app=shirty&logo=true" />
 
-![App iamge](./src/components/img/twitter_header_photo_2.png)
+![App image](https://user-images.githubusercontent.com/82192180/164292456-801958af-6ae8-4b31-8cf7-3a4ec1406740.png)
+
 
 
 # SHIRTY
