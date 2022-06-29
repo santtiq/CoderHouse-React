@@ -5,7 +5,8 @@ import ItemList from "../ItemList";
 import Spinner from "../widgets/Spinner";
 import { db } from "../firebase";
 import { getDocs, query, collection, where } from "firebase/firestore";
-const ItemListContainer = () => {
+
+const ItemListContainer = ({ isDark }) => {
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -18,7 +19,10 @@ const ItemListContainer = () => {
             const q = query(collection(db, "productos"), where("category", "==", id))
 
             getDocs(q)
-                .then((resp) => setProductos(resp.docs.map(p => ({ productos: p.data(), id: p.id }))))
+                .then((resp) => {
+                    setLoading(true)
+                    setProductos(resp.docs.map(p => ({ productos: p.data(), id: p.id })))
+                })
                 .catch(() => {
                     setError(true);
                 })
@@ -27,7 +31,10 @@ const ItemListContainer = () => {
                 })
         } else {
             getDocs(collection(db, "productos"))
-                .then((resp) => setProductos(resp.docs.map(p => ({ productos: p.data(), id: p.id }))))
+                .then((resp) => {
+                    setLoading(true)
+                    setProductos(resp.docs.map(p => ({ productos: p.data(), id: p.id })))
+                })
                 .catch(() => {
                     setError(true);
                 })
@@ -39,8 +46,8 @@ const ItemListContainer = () => {
 
     return (
         <>
-            <main className="item-container">
-                {loading ? <Spinner /> : <ItemList products={productos} />}
+            <main className={isDark ? "item-container dark-mode-bckg" : "item-container light-mode-bckg"}>
+                {loading ? <Spinner /> : <ItemList products={productos} isDark={isDark} />}
                 {error ? toast.error('Hubo un error') : null}
             </main>
 

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 
-const Item = ({ producto }) => {
+const Item = ({ producto, isDark }) => {
     const { productos, id } = producto;
 
     return (
@@ -11,9 +11,9 @@ const Item = ({ producto }) => {
                     <div className="imgContainer">
                         <img className="imgCard" src={productos.image} alt="" />
                     </div>
-                    <div className="card-text">
+                    <div className={isDark ? "card-text dark-mode-elmnt dark-mode-text" : "card-text light-mode-elmnt light-mode-text"}>
                         <p className="tittle-card">{productos.title}</p>
-                        <p className="price-card">US$ {productos.price}</p>
+                        <p className={isDark ? "price-card dark-mode-text" : "price-card light-mode-blue-text"}>US$ {productos.price}</p>
                     </div>
                 </div>}
 

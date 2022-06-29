@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { contexto } from "../CartContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 const CartWidget = () => {
 
@@ -8,7 +10,7 @@ const CartWidget = () => {
     return (
         <div className="cart-btn">
             <div className="nav-icon">
-                <i className="fa-solid fa-cart-shopping"></i>
+                <FontAwesomeIcon icon={faCartShopping} />
             </div>
             {totalProductos > 0 ? <div className="cart-items">{totalProductos}</div> : null}
         </div>

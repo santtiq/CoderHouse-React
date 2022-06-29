@@ -56,13 +56,13 @@ const CartCheckout = () => {
                 <h2>Checkout Information</h2>
                 <form className="cart-checkout-form">
                     <div className="cart-checkout-input">
-                        <input onChange={handleNameChange} value={buyerName} placeholder=" Ingrese su nombre" error={buyerName !== "" && !validName} />
+                        <input onChange={handleNameChange} value={buyerName} placeholder=" Ingrese su nombre" error={buyerName !== "" || !validName} />
                     </div>
                     <div className="cart-checkout-input">
-                        <input onChange={handlePhoneChange} value={buyerPhone} placeholder=" Ingrese su teléfono" error={buyerPhone !== "" && !validPhone} />
+                        <input onChange={handlePhoneChange} value={buyerPhone} placeholder=" Ingrese su teléfono" error={buyerPhone !== "" || !validPhone} />
                     </div>
                     <div className="cart-checkout-input">
-                        <input onChange={handleEmailChange} value={buyerEmail} placeholder=" Ingrese su email" error={buyerEmail !== "" && !validEmail} />
+                        <input onChange={handleEmailChange} value={buyerEmail} placeholder=" Ingrese su email" error={buyerEmail !== "" || !validEmail} />
                     </div>
 
                 </form>
