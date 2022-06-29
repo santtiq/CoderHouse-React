@@ -1,10 +1,11 @@
 <img src="http://therealsujitk-vercel-badge.vercel.app/?app=shirty&logo=true" />
 
-![App image](https://user-images.githubusercontent.com/82192180/164292456-801958af-6ae8-4b31-8cf7-3a4ec1406740.png)
+![App image](https://user-images.githubusercontent.com/82192180/176563717-c6419089-5ae7-4abe-b512-c066be111f74.png)
 
 
 
-# SHIRTY
+# SHIRTY!
+
 
 ## Project Description
 
